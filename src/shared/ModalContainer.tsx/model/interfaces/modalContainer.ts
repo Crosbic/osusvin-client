@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction } from 'react'
 
 export interface ModalContainerProps {
-  children: string | JSX.Element
+  children: string | React.JSX.Element
   setIsOpen: Dispatch<SetStateAction<boolean>>
   isOpen: boolean
   openButton: string
