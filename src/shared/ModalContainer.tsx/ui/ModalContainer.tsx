@@ -45,9 +45,9 @@ export const ModalContainer: FC<ModalContainerProps> = (props) => {
         </DialogHeader>
         {children}
 
-        {submitButton && (
+        {!!submitButton && (
           <DialogFooter>
-            {declineButton && (
+            {!!declineButton && (
               <Button type="submit" size={'sm'} onClick={handleClose}>
                 {declineButton}
               </Button>
