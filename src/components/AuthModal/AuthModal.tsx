@@ -2,8 +2,8 @@
 
 import { FC, useState } from 'react'
 
+import { ModalContainer } from '@/components/ModalContainer/ModalContainer'
 import { cn } from '@/lib/utils'
-import { ModalContainer } from '@/shared/ModalContainer.tsx/ui/ModalContainer'
 
 const openButton: string = 'Вход'
 const title: string = 'Ты хочешь показать жопу?'

@@ -1,6 +1,6 @@
+import { AuthModal } from '@/components/AuthModal/AuthModal'
 import { ModeToggle } from '@/components/mode-toggle'
 import { Button } from '@/components/ui/button'
-import { AuthModal } from '@/features/AuthModal/ui/AuthModal'
 
 export default function Home() {
   return (
