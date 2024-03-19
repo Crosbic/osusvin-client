@@ -1,3 +1,4 @@
+import { AuthModal } from '@/components/AuthModal/AuthModal'
 import { ModeToggle } from '@/components/mode-toggle'
 import { Button } from '@/components/ui/button'
 
@@ -10,6 +11,7 @@ export default function Home() {
         <Button style={{ fontWeight: 'bold', textTransform: 'uppercase' }}>
           kakashka
         </Button>
+        <AuthModal />
       </div>
     </main>
   )
