@@ -1,5 +1,6 @@
 'use client'
 
+import React from 'react'
 import { Dispatch, FC, SetStateAction } from 'react'
 
 import { Button } from '@/components/ui/button'
@@ -13,7 +14,7 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog'
 
-export interface ModalContainerProps {
+interface ModalContainerProps {
   children: string | React.JSX.Element
   setIsOpen: Dispatch<SetStateAction<boolean>>
   isOpen: boolean
