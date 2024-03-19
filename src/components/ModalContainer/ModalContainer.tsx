@@ -1,7 +1,6 @@
 'use client'
 
-import React from 'react'
-import { Dispatch, FC, SetStateAction } from 'react'
+import React, { Dispatch, FC, SetStateAction } from 'react'
 
 import { Button } from '@/components/ui/button'
 import {
