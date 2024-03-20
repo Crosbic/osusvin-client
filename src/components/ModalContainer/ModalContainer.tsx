@@ -44,7 +44,7 @@ export const ModalContainer: FC<ModalContainerProps> = (props) => {
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogTrigger>{openButton}</DialogTrigger>
+      <DialogTrigger className="uppercase">{openButton}</DialogTrigger>
       <DialogContent>
         <DialogHeader>
           <DialogTitle>{title}</DialogTitle>
