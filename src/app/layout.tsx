@@ -4,7 +4,8 @@ import type { Metadata } from 'next'
 import { Sofia_Sans } from 'next/font/google'
 import React from 'react'
 
-import { ThemeProvider } from '@/components/theme-provider'
+import { ThemeProvider } from '@/components/ThemeProvider'
+import Header from '@/widgets/header'
 
 const font = Sofia_Sans({ subsets: ['latin', 'cyrillic'] })
 
@@ -27,6 +28,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Header />
           {children}
         </ThemeProvider>
       </body>
