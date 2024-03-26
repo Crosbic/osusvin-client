@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { AuthModal } from '@/components/AuthModal/AuthModal'
-import { ModeToggle } from '@/components/ModeToggle'
+import { ModeToggle } from '@/shared/ModeToggle/ui/ModeToggle'
+import { AuthModal } from '@/widgets/header/features/AuthModal/ui/AuthModal'
 
 import logo from '../../../../public/header-logo.png'
 

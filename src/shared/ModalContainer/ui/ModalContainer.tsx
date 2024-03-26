@@ -1,6 +1,6 @@
 'use client'
 
-import React, { Dispatch, FC, SetStateAction } from 'react'
+import React, { FC } from 'react'
 
 import { Button } from '@/components/ui/button'
 import {
@@ -12,29 +12,7 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog'
 
-interface IOpenButton {
-  text: string
-  variant?:
-    | 'default'
-    | 'destructive'
-    | 'outline'
-    | 'secondary'
-    | 'ghost'
-    | 'link'
-  size?: 'default' | 'sm' | 'lg' | 'icon'
-}
-
-interface ModalContainerProps {
-  children: string | React.JSX.Element
-  setIsOpen: Dispatch<SetStateAction<boolean>>
-  isOpen: boolean
-  title: string
-  description?: string
-  submitButton?: string
-  declineButton?: string
-  onSubmitClick?: () => void
-  openButton: IOpenButton
-}
+import { ModalContainerProps } from '../model/interfaces'
 
 export const ModalContainer: FC<ModalContainerProps> = (props) => {
   const {

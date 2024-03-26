@@ -2,8 +2,8 @@
 
 import { FC, useState } from 'react'
 
-import { ModalContainer } from '@/components/ModalContainer/ModalContainer'
 import { cn } from '@/lib/utils'
+import { ModalContainer } from '@/shared/ModalContainer/ui/ModalContainer'
 
 const title: string = 'Ты хочешь показать жопу?'
 const submitButton: string = 'Да, войти'
