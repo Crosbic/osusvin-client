@@ -37,11 +37,24 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean
+  isUpperCase?: boolean
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
+  (
+    { className, variant, size, asChild = false, isUpperCase = true, ...props },
+    ref
+  ) => {
+    const { children } = props
+
+    const isStringChildren = typeof children === 'string'
+
     const Comp = asChild ? Slot : 'button'
+
+    props['children'] =
+      isUpperCase && isStringChildren
+        ? props['children']?.toString().toUpperCase()
+        : children
 
     return (
       <Comp

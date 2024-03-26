@@ -5,7 +5,7 @@ export default function Home() {
     <main>
       <div className="m-8 flex gap-4">
         <div>Съешь ещё этих мягких французских булок, да выпей чаю.</div>
-        <Button className="font-bold uppercase">kakashka</Button>
+        <Button className="font-bold">kakashka</Button>
       </div>
     </main>
   )
