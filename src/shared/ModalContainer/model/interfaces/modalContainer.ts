@@ -1,6 +1,6 @@
-import { Dispatch, SetStateAction } from 'react'
+import React, { Dispatch, SetStateAction } from 'react'
 
-import { IOpenButton } from '.'
+import { IOpenButton, ISubmitButton } from '.'
 
 export interface ModalContainerProps {
   children: string | React.JSX.Element
@@ -8,7 +8,7 @@ export interface ModalContainerProps {
   isOpen: boolean
   title: string
   description?: string
-  submitButton?: string
+  submitButton?: ISubmitButton
   declineButton?: string
   onSubmitClick?: () => void
   openButton: IOpenButton

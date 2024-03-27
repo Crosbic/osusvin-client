@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import React, { FC } from 'react'
 
 import { Button } from '@/components/ui/button'
@@ -55,14 +56,22 @@ export const ModalContainer: FC<ModalContainerProps> = (props) => {
 
         {!!submitButton && (
           <DialogFooter>
+            {submitButton.link ? (
+              <Link href={submitButton.link}>
+                <Button type="submit" size={'sm'} onClick={onSubmitClick}>
+                  {submitButton.text}
+                </Button>
+              </Link>
+            ) : (
+              <Button type="submit" size={'sm'} onClick={onSubmitClick}>
+                {submitButton.text}
+              </Button>
+            )}
             {!!declineButton && (
               <Button type="submit" size={'sm'} onClick={handleClose}>
                 {declineButton}
               </Button>
             )}
-            <Button type="submit" size={'sm'} onClick={onSubmitClick}>
-              {submitButton}
-            </Button>
           </DialogFooter>
         )}
       </DialogContent>
