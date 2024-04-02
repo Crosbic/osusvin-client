@@ -1,6 +1,8 @@
 import React, { Dispatch, SetStateAction } from 'react'
 
-import { IOpenButton, ISubmitButton } from '.'
+import { ISubmitButton } from '@/shared/ModalContainer/model/interfaces/submitButton'
+
+import { IOpenButton } from '.'
 
 export interface ModalContainerProps {
   children: string | React.JSX.Element

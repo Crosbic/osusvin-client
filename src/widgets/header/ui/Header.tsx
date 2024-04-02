@@ -14,6 +14,8 @@ export const Header = () => {
   const [user, setUser] = useState<IUser>()
   const [token, setToken] = useState<string>()
 
+  const { username, avatarUrl = '' } = user ?? {}
+
   useEffect(() => {
     if (localStorage.getItem('jwt')) {
       setToken(localStorage.getItem('jwt') ?? '')
@@ -30,9 +32,9 @@ export const Header = () => {
         <ModeToggle />
         {token ? (
           <div className="flex flex-row gap-2 items-center">
-            <div>{user?.username}</div>
+            <div>{username}</div>
             <Image
-              src={user!.avatarUrl}
+              src={avatarUrl}
               alt="avatar"
               width="48"
               height="48"

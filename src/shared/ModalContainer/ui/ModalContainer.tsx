@@ -28,6 +28,7 @@ export const ModalContainer: FC<ModalContainerProps> = (props) => {
     declineButton,
   } = props
 
+  const { submitText, link } = submitButton ?? {}
   const { text, variant = 'default', size = 'sm' } = openButton
 
   const handleClose = () => {
@@ -56,15 +57,15 @@ export const ModalContainer: FC<ModalContainerProps> = (props) => {
 
         {!!submitButton && (
           <DialogFooter>
-            {submitButton.link ? (
-              <Link href={submitButton.link}>
+            {link ? (
+              <Link href={link}>
                 <Button type="submit" size={'sm'} onClick={onSubmitClick}>
-                  {submitButton.text}
+                  {submitText}
                 </Button>
               </Link>
             ) : (
               <Button type="submit" size={'sm'} onClick={onSubmitClick}>
-                {submitButton.text}
+                {submitText}
               </Button>
             )}
             {!!declineButton && (

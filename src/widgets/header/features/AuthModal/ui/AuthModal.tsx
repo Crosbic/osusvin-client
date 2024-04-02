@@ -4,13 +4,13 @@ import { useRouter } from 'next/navigation'
 import { FC, useEffect, useState } from 'react'
 
 import { cn } from '@/lib/utils'
-import { ISubmitButton } from '@/shared/ModalContainer/model/interfaces/buttons'
+import { ISubmitButton } from '@/shared/ModalContainer/model/interfaces/submitButton'
 import { ModalContainer } from '@/shared/ModalContainer/ui/ModalContainer'
 import { IUser } from '@/widgets/header/features/AuthModal/interfaces'
 
 const title: string = 'Подтверждение входа'
 const submitButton: ISubmitButton = {
-  text: 'Войти',
+  submitText: 'Войти',
   link: 'http://localhost:8080/auth/osu/login',
 }
 const declineButton: string = 'Отмена'
@@ -21,6 +21,8 @@ export const AuthModal: FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const [user, setUser] = useState<IUser>()
   const [token, setToken] = useState<string>('')
+
+  const { username } = user ?? {}
 
   const router = useRouter()
 
@@ -74,7 +76,7 @@ export const AuthModal: FC = () => {
           </div>
         </div>
       ) : (
-        <div>{user?.username}, ты уже авторизован.</div>
+        <div>{username}, ты уже авторизован.</div>
       )}
     </ModalContainer>
   )

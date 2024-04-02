@@ -1,4 +1,4 @@
-import { IOpenButton, ISubmitButton } from './buttons'
 import { ModalContainerProps } from './modalContainer'
+import { IOpenButton } from './openButton'
 
-export type { IOpenButton, ISubmitButton, ModalContainerProps }
+export type { IOpenButton, ModalContainerProps }
