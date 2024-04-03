@@ -1,4 +1,6 @@
-import { Dispatch, SetStateAction } from 'react'
+import React, { Dispatch, SetStateAction } from 'react'
+
+import { ISubmitButton } from '@/shared/ModalContainer/model/interfaces/submitButton'
 
 import { IOpenButton } from '.'
 
@@ -8,7 +10,7 @@ export interface ModalContainerProps {
   isOpen: boolean
   title: string
   description?: string
-  submitButton?: string
+  submitButton?: ISubmitButton
   declineButton?: string
   onSubmitClick?: () => void
   openButton: IOpenButton

@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import React, { FC } from 'react'
 
 import { Button } from '@/components/ui/button'
@@ -27,6 +28,7 @@ export const ModalContainer: FC<ModalContainerProps> = (props) => {
     declineButton,
   } = props
 
+  const { submitText, link } = submitButton ?? {}
   const { text, variant = 'default', size = 'sm' } = openButton
 
   const handleClose = () => {
@@ -55,14 +57,22 @@ export const ModalContainer: FC<ModalContainerProps> = (props) => {
 
         {!!submitButton && (
           <DialogFooter>
+            {link ? (
+              <Link href={link}>
+                <Button type="submit" size={'sm'} onClick={onSubmitClick}>
+                  {submitText}
+                </Button>
+              </Link>
+            ) : (
+              <Button type="submit" size={'sm'} onClick={onSubmitClick}>
+                {submitText}
+              </Button>
+            )}
             {!!declineButton && (
               <Button type="submit" size={'sm'} onClick={handleClose}>
                 {declineButton}
               </Button>
             )}
-            <Button type="submit" size={'sm'} onClick={onSubmitClick}>
-              {submitButton}
-            </Button>
           </DialogFooter>
         )}
       </DialogContent>
