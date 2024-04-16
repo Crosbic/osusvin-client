@@ -8,6 +8,7 @@ html, body {
 
 main {
   height: calc(100% - 4.5rem);
+  padding: 1rem 2rem;
 }
 
 @layer base {
