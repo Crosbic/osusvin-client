@@ -4,13 +4,16 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
+import { useResize } from '@/model/hooks/useResize'
 import { ModeToggle } from '@/shared/ModeToggle/ui/ModeToggle'
-import UserDropdownMenu from '@/shared/UserDropdownMenu/ui/UserDropDownStats'
 import { AuthModal } from '@/widgets/header/features/AuthModal/ui/AuthModal'
+import PagesMenubar from '@/widgets/header/features/PagesMenubar/ui/PagesMenubar'
+import UserDropdownMenu from '@/widgets/header/features/UserDropdownMenu/ui/UserDropdownMenu'
 
 import logo from '../../../../public/svin.png'
 
 export const Header = () => {
+  const { isSmallDesktop, isDesktop, width } = useResize()
   const [token, setToken] = useState<string>()
 
   useEffect(() => {
@@ -28,6 +31,7 @@ export const Header = () => {
         <Image src={logo} alt="svin logo" className="h-9 w-auto" priority />
         <div className="pr-2 font-bold text-3xl">o!st 2</div>
       </Link>
+      {width > 700 ? <PagesMenubar /> : null}
       <div className="flex items-center justify-between gap-4">
         <ModeToggle />
         {token ? <UserDropdownMenu /> : <AuthModal />}
