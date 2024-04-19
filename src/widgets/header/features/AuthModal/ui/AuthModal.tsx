@@ -1,6 +1,6 @@
 'use client'
 
-import { router } from 'next/client'
+import { useRouter } from 'next/navigation'
 import { FC, useEffect, useState } from 'react'
 
 import { cn } from '@/lib/utils'
@@ -24,7 +24,7 @@ export const AuthModal: FC = () => {
 
   const { username } = user ?? {}
 
-  // const router = useRouter()
+  const router = useRouter()
 
   useEffect(() => {
     setToken(localStorage.getItem('jwt') ?? '')
@@ -39,14 +39,12 @@ export const AuthModal: FC = () => {
         localStorage.setItem('user', params.user)
         setToken(params.accessToken)
         setUser(JSON.parse(params.user))
-        router
-          .push('/successRegistration')
-          .then((r) => console.log('login successful'))
+        router.push('/successRegistration')
       }
     }
 
     checkLogin()
-  }, [])
+  }, [router])
 
   const handleSubmitClick = () => {
     setIsOpen(false)

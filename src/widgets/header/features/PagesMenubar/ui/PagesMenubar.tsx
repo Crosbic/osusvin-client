@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button'
 
 const PagesMenubar = () => {
   return (
-    <div className="p-1.5 flex flex-row items-center justify-center gap-1.5 border border-gray-800 rounded-md">
+    <div className="p-1.5 flex flex-row items-center justify-center gap-1.5 border rounded-md">
       {/*Варн в линках из версии некста с pages роутера, хз почему*/}
       <Link href="/participants">
         <Button className="h-8">Участники</Button>

@@ -35,13 +35,15 @@ const UserDropdownMenu = () => {
       <DropdownMenuTrigger>
         <div className="flex flex-row gap-2 items-center cursor-pointer">
           <div>{username}</div>
-          <Image
-            src={avatarUrl}
-            alt="avatar"
-            width="36"
-            height="36"
-            className="rounded-lg"
-          />
+          {avatarUrl && (
+            <Image
+              src={avatarUrl}
+              alt="avatar"
+              width="36"
+              height="36"
+              className="rounded-lg"
+            />
+          )}
         </div>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" sideOffset={10} className="p-2">

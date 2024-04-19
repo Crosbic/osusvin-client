@@ -13,7 +13,7 @@ import UserDropdownMenu from '@/widgets/header/features/UserDropdownMenu/ui/User
 import logo from '../../../../public/svin.png'
 
 export const Header = () => {
-  const { isSmallDesktop, isDesktop, width } = useResize()
+  const { width } = useResize()
   const [token, setToken] = useState<string>()
 
   useEffect(() => {
